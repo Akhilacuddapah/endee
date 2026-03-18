@@ -1,0 +1,176 @@
+[
+  {
+    "context": "empty street at night",
+    "crowd": "LOW",
+    "risk": "HIGH",
+    "analysis": "Isolated dark environment increases risk",
+    "action": "Move to safe crowded place, avoid isolation",
+    "help": "Police Station",
+    "help_type": "police"
+},
+  {
+    "context": "walking alone late night",
+    "crowd": "LOW",
+    "risk": "HIGH",
+    "analysis": "Low visibility and isolation increase danger",
+    "action": "Stay in lit areas, share location",
+    "help": "Police Station",
+    "help_type": "police"
+  },
+  {
+    "context": "someone following me",
+    "crowd": "LOW",
+    "risk": "HIGH",
+    "analysis": "Possible threat detected",
+    "action": "Move to crowded place, call police",
+    "help": "Police Station",
+    "help_type": "police"
+  },
+  {
+    "context": "crowded railway station",
+    "crowd": "HIGH",
+    "risk": "MEDIUM",
+    "analysis": "Pickpocket risk is high",
+    "action": "Stay alert and secure belongings",
+    "help": "Railway Help Desk",
+    "help_type": "railway"
+  },
+  {
+    "context": "heavy festival crowd",
+    "crowd": "HIGH",
+    "risk": "MEDIUM",
+    "analysis": "Overcrowding increases theft and stampede risk",
+    "action": "Avoid dense areas, move carefully",
+    "help": "Police Booth",
+    "help_type": "crowd"
+  },
+  {
+    "context": "medical emergency person fainted",
+    "crowd": "LOW",
+    "risk": "HIGH",
+    "analysis": "Immediate medical attention required",
+    "action": "Call ambulance immediately",
+    "help": "Hospital",
+    "help_type": "medical"
+  },
+  {
+    "context": "road accident injured person",
+    "crowd": "MEDIUM",
+    "risk": "HIGH",
+    "analysis": "Critical emergency situation",
+    "action": "Call ambulance and police",
+    "help": "Hospital",
+    "help_type": "medical"
+  },
+  {
+    "context": "lost in unknown city",
+    "crowd": "LOW",
+    "risk": "MEDIUM",
+    "analysis": "Unfamiliar environment",
+    "action": "Move to safe public area",
+    "help": "Safe Area",
+    "help_type": "general"
+  },
+  {
+    "context": "heavy traffic to airport",
+    "crowd": "HIGH",
+    "risk": "MEDIUM",
+    "analysis": "Traffic congestion may delay arrival",
+    "action": "Use alternate routes or metro",
+    "help": "Navigation",
+    "help_type": "transport"
+  },
+  {
+    "context": "late to airport flight",
+    "crowd": "HIGH",
+    "risk": "HIGH",
+    "analysis": "Risk of missing flight due to delay",
+    "action": "Choose fastest route, book cab immediately",
+    "help": "Transport",
+    "help_type": "transport"
+  },
+  {
+    "context": "find less traffic route to airport",
+    "crowd": "HIGH",
+    "risk": "LOW",
+    "analysis": "User needs efficient navigation",
+    "action": "Use alternate routes or metro",
+    "help": "Navigation",
+    "help_type": "transport"
+  },
+  {
+    "context": "best way to reach airport quickly",
+    "crowd": "HIGH",
+    "risk": "LOW",
+    "analysis": "Optimizing travel time",
+    "action": "Use metro or fastest cab route",
+    "help": "Transport",
+    "help_type": "transport"
+  },
+  {
+    "context": "airport security check long queue",
+    "crowd": "HIGH",
+    "risk": "MEDIUM",
+    "analysis": "Long waiting time",
+    "action": "Move to alternate check-in counter",
+    "help": "Airport Help Desk",
+    "help_type": "airport"
+  },
+  {
+    "context": "lost luggage at airport",
+    "crowd": "MEDIUM",
+    "risk": "MEDIUM",
+    "analysis": "Need assistance for baggage",
+    "action": "Contact airport help desk",
+    "help": "Airport Help Desk",
+    "help_type": "airport"
+  },
+
+  
+
+  {
+    "context": "heavy traffic in city",
+    "crowd": "HIGH",
+    "risk": "LOW",
+    "analysis": "Traffic congestion slows travel",
+    "action": "Use metro or alternate roads",
+    "help": "Transport",
+    "help_type": "transport"
+  },
+  {
+    "context": "crowded metro station",
+    "crowd": "HIGH",
+    "risk": "MEDIUM",
+    "analysis": "Rush may cause discomfort",
+    "action": "Use alternate station",
+    "help": "Metro Help Desk",
+    "help_type": "crowd"
+  },
+  {
+    "context": "waiting alone bus stop night",
+    "crowd": "LOW",
+    "risk": "HIGH",
+    "analysis": "Unsafe waiting condition",
+    "action": "Avoid isolation, book cab",
+    "help": "Police Station",
+    "help_type": "police"
+  },
+  {
+    "context": "need safe route to home",
+    "crowd": "LOW",
+    "risk": "MEDIUM",
+    "analysis": "User wants safer navigation",
+    "action": "Choose well-lit crowded routes",
+    "help": "Navigation",
+    "help_type": "transport"
+  },
+  {
+    "context": "fire accident in building",
+    "crowd": "HIGH",
+    "risk": "HIGH",
+    "analysis": "Emergency evacuation required",
+    "action": "Use nearest exit immediately",
+    "help": "Fire Station",
+    "help_type": "emergency"
+  }
+]

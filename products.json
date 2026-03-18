@@ -1,0 +1,23 @@
+[
+  {
+    "context": "best phone for photography",
+    "name": "iPhone 15",
+    "price": "₹70,000",
+    "platform": "Amazon",
+    "link": "https://www.google.com/search?q=iphone+15+buy"
+  },
+  {
+    "context": "best camera phone",
+    "name": "Samsung Galaxy S23",
+    "price": "₹65,000",
+    "platform": "Flipkart",
+    "link": "https://www.google.com/search?q=samsung+galaxy+s23+buy"
+  },
+  {
+    "context": "budget phone under 20000",
+    "name": "Redmi Note 13",
+    "price": "₹18,000",
+    "platform": "Flipkart",
+    "link": "https://www.google.com/search?q=redmi+note+13+buy"
+  }
+]
