@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>AI Smart Decision Assistant</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial;
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    color: white;
+}
+
+.main {
+    display: flex;
+    height: 100vh;
+}
+
+.left {
+    width: 50%;
+    padding: 40px;
+}
+
+.right {
+    width: 50%;
+    padding: 20px;
+    background: rgba(0,0,0,0.2);
+}
+
+input {
+    padding: 12px;
+    width: 70%;
+    border-radius: 8px;
+    border: none;
+}
+
+button {
+    padding: 10px 16px;
+    background: linear-gradient(45deg, #00ffcc, #00ccff);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 8px;
+}
+
+.card {
+    margin-top: 30px;
+    padding: 25px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    width: 85%;
+}
+
+.highlight { color: #00ffcc; }
+.danger { color: red; }
+
+.product-card {
+    background: rgba(255,255,255,0.08);
+    padding: 15px;
+    border-radius: 10px;
+    margin-top: 15px;
+}
+
+iframe {
+    width: 100%;
+    height: 70%;
+    border-radius: 10px;
+    margin-top: 15px;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="main">
+
+<!-- LEFT -->
+<div class="left">
+
+<h1>🚀 AI Smart Decision Assistant</h1>
+
+<form method="POST">
+    <input type="text" name="input" placeholder="Describe situation or search product..." value="{{ user_input }}">
+    <button type="submit">Analyze</button>
+</form>
+
+{% if result %}
+
+<!-- SAFETY -->
+{% if result.type == "safety" %}
+
+<div class="card">
+<h3>Crowd Level: <span class="highlight">{{ result.crowd }}</span></h3>
+<h3>Risk Level: <span class="danger">{{ result.risk }}</span></h3>
+
+<p><b>Confidence:</b> {{ result.confidence }}</p>
+<p><b>Analysis:</b> {{ result.analysis }}</p>
+<p><b>Action:</b> {{ result.action }}</p>
+<p><b>Help:</b> {{ result.help }}</p>
+
+<button onclick="findNearby('police station')">📍 Nearby Help</button>
+<button onclick="findNearby('safe place')">🛡 Safe Area</button>
+</div>
+
+{% endif %}
+
+<!-- PRODUCT -->
+{% if result.type == "product" %}
+
+<div class="card">
+<h2>🛒 Product Recommendations</h2>
+
+{% for item in result["items"] %}
+
+<div class="product-card">
+<h3>{{ item.name }}</h3>
+<p>💰 Price: {{ item.price }}</p>
+<p>🏬 Platform: {{ item.platform }}</p>
+
+<a href="{{ item.link }}" target="_blank">
+    <button>🛒 View Product</button>
+</a>
+</div>
+
+{% endfor %}
+
+</div>
+
+{% endif %}
+
+{% endif %}
+
+</div>
+
+<!-- RIGHT -->
+<div class="right">
+
+{% if result and result.type == "safety" %}
+
+<h2>📍 Nearby Help</h2>
+<iframe id="mapFrame"></iframe>
+<button onclick="openRapido()">🚕 Book Rapido</button>
+
+{% elif result and result.type == "product" %}
+
+<h2>🛒 Product View</h2>
+<iframe id="productFrame"></iframe>
+
+{% endif %}
+
+</div>
+
+</div>
+
+<script>
+
+function findNearby(place) {
+    navigator.geolocation.getCurrentPosition(function(position) {
+        let lat = position.coords.latitude;
+        let lon = position.coords.longitude;
+
+        let url = `https://www.google.com/maps?q=${place}&ll=${lat},${lon}&z=15&output=embed`;
+        document.getElementById("mapFrame").src = url;
+    });
+}
+
+function openRapido() {
+    window.open("https://rapido.bike/");
+}
+
+function showProduct(link) {
+    document.getElementById("productFrame").src = link;
+}
+
+</script>
+
+</body>
+</html>
